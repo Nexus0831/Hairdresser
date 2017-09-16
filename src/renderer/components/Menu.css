@@ -1,0 +1,28 @@
+.menu {
+    display: flex;
+    flex-direction: row;
+    border-top: solid rgba(255, 255, 255, 0.2) 1px;
+}
+
+.icons {
+    width: 30%;
+    height: 100%;
+    position: relative;
+}
+
+.icon {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate3d(-50%, -50%, 0);
+    transform: translate3d(-50%, -50%, 0);
+}
+
+.text {
+    font-family: Helvetica Neue;
+    width: 70%;
+    font-size: 1.5em;
+    color: white;
+    display: flex;
+    align-items: center;/* 縦方向中央揃え */
+}

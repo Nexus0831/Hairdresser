@@ -1,0 +1,14 @@
+.base {
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(-180deg, #732059, #401031);
+    color: white;
+}
+
+.signup {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate3d(-50%, -50%, 0);
+    transform: translate3d(-50%, -50%, 0);
+}

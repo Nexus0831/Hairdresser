@@ -1,0 +1,21 @@
+# See https://help.github.com/ignore-files/ for more about ignoring files.
+
+# IDE
+/.idea
+
+# static files
+/static/
+
+# package
+/package.json
+/package-lock.json
+
+# babel
+/.babelrc
+
+# webpack config
+/webpack.config.js
+
+# dependencies
+/node_modules/
+

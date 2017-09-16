@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Markdown Editor</title>
+
+        <link rel="stylesheet" href="static/css/bootstrap.min.css">
+        <link rel="stylesheet" href="static/css/flat-ui.min.css">
+        <link rel="stylesheet" href="static/css/hover-min.css">
+        <script src="static/js/jquery-3.2.1.min.js"></script>
+        <script src="static/js/bootstrap.min.js"></script>
+
+        <style type="text/css">
+            #app {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+            }
+
+        </style>
+    </head>
+
+    <body>
+        <div class="window">
+            <div id="app" class="window-content" style="-webkit-app-region: drag"></div>
+        </div>
+
+        <script>require("./dist/renderer/app.js")</script>
+    </body>
+</html>

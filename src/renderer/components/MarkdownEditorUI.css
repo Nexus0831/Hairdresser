@@ -1,0 +1,25 @@
+.markdownEditor {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    width: 100%;
+    background-color: #fff;
+}
+
+.markdownBorder {
+    width: 1px;
+    height: 104%;
+    margin-top: -20px;
+    margin-bottom: -20px;
+    border-left: solid #000 1px;
+}
+
+.editorArea {
+    margin-right: 8px;
+    font-size: 20px;
+    background-color: #fff;
+}
+
+.previewerArea {
+    padding-left: 8px;
+}

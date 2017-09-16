@@ -1,0 +1,26 @@
+.base {
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(-180deg, #84316A, #732059);
+    color: white;
+}
+
+.loading {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate3d(-50%, -50%, 30px);
+    transform: translate3d(-50%, -50%, 30px);
+    z-index: 2;
+}
+
+.login {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    z-index: 0;
+}

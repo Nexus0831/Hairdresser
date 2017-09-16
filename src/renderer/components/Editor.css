@@ -1,0 +1,10 @@
+.editor {
+    width: 100%;
+    border: solid #fff 1px;
+    resize: none;
+    margin: -8px;
+}
+
+.editor:focus {
+    outline: none;
+}
