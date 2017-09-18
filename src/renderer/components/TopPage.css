@@ -1,27 +1,30 @@
 .topPage {
     width: 100%;
     height: 100%;
-    margin-top: -30px;
     background-image: linear-gradient(-180deg, #84316A, #732059);
 }
 
-.menu {
-    height: 25%;
-    width: 100%;
-
+.header {
+    height: 50%;
 }
 
-
 .title {
-    height: 25%;
-    width: 100%;
     font-family: serif;
     text-align: center;
     color: white;
     display: flex;
     align-items: center;/* 縦方向中央揃え */
     justify-content: center;/* 横方向中央揃え */
-    font-size: 120px;
+    font-size: 3em;
     margin-bottom: 0;
+}
+
+.link {
+    width: 100%;
+    height: 100%;
+}
+
+.icon {
+    text-align: center;
 }
 

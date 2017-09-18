@@ -1,17 +1,19 @@
 'use strict';
 
 import React from "react";
-import {Link, hashHistory } from "react-router";
+import {Link, hashHistory} from "react-router";
 import Errors from "./Errors.jsx";
 import Loading from "./Loading.jsx";
 import firebase from "firebase/firebase-browser";
 import TextField from "material-ui/TextField";
-import RaisedButton from "material-ui/RaisedButton";
+import Button from "material-ui/Button";
 import style from "./Login.css";
 
 const BUTTON_STYLE = {
     marginBottom: 20,
     zIndex: 1,
+    width: '100%',
+    backgroundColor: '#3d9137'
 };
 
 
@@ -32,17 +34,17 @@ export default class Login extends React.Component {
     }
 
     handleOnChangeEmail(e) {
-        this.setState({ email: e.target.value });
+        this.setState({email: e.target.value});
     }
 
     handleOnChangePassword(e) {
-        this.setState({ password: e.target.value });
+        this.setState({password: e.target.value});
     }
 
     // ログイン処理
     handleOnSubmit(e) {
-        this.setState({ loading: true});
-        const { email, password } = this.state;
+        this.setState({loading: true});
+        const {email, password} = this.state;
         const errors = [];
         let isValid = true;
         e.preventDefault();
@@ -59,7 +61,7 @@ export default class Login extends React.Component {
 
         if (!isValid) {
             // 必須入力チェックに該当した場合はエラーを表示する
-            this.setState({ errors });
+            this.setState({errors});
             return;
         }
 
@@ -69,53 +71,52 @@ export default class Login extends React.Component {
             localStorage.userEmail = email;
             localStorage.userPassword = password;
             // チャットルーム一覧画面へ遷移
-            this.setState({ loading: false});
+            this.setState({loading: false});
             hashHistory.push("/topPage");
         }).catch(() => {
             // Firebaseでログインエラーとなった場合
-            this.setStart({ errors: ["メールアドレスかパスワードが間違っています"] });
+            this.setStart({errors: ["メールアドレスかパスワードが間違っています"]});
         });
     }
 
     render() {
         return (
 
-                <div className={style.base}>
-                    <form className={style.login}>
+            <div className={style.base} noValidate autoComplete="off">
+                <form className={style.login}>
 
-                        <Errors errorMessages={this.state.errors} />
-                        <div className="form-group">
-                            <TextField
-                                floatingLabelText="メールアドレス"
-                                value={this.state.email}
-                                onChange={this.handleOnChangeEmail}
-                            />
-                        </div>
+                    <Errors errorMessages={this.state.errors}/>
+                    <div className="form-group">
+                        <TextField
+                            label="メールアドレス"
+                            value={this.state.email}
+                            onChange={this.handleOnChangeEmail}
+                        />
+                    </div>
 
-                        <div className="form-group">
-                            <TextField
-                                floatingLabelText="パスワード"
-                                type="password"
-                                value={this.state.password}
-                                onChange={this.handleOnChangePassword}
-                            />
-                        </div>
+                    <div className="form-group">
+                        <TextField
+                            label="パスワード"
+                            type="password"
+                            value={this.state.password}
+                            onChange={this.handleOnChangePassword}
+                        />
+                    </div>
 
-                        <div className="form-group">
-                            <RaisedButton
-                                label="Login"
-                                primary={true}
-                                fullWidth={true}
-                                style={BUTTON_STYLE}
-                                onClick={this.handleOnSubmit}
-                            />
-                            <Link to="/signup">
-                                <RaisedButton label="アカウント登録" />
-                            </Link>
-                        </div>
-                    </form>
-                    <Loading isActive={this.state.loading} className={style.loading} />
-                </div>
+                    <div className="form-group">
+                        <Button
+                            raised={true}
+                            color="primary"
+                            className={style.loginButton}
+                            onClick={this.handleOnSubmit}
+                        >Login</Button>
+                        <Link to="/signup">
+                            <Button raised={true} className={style.signupButton}>アカウント登録</Button>
+                        </Link>
+                    </div>
+                </form>
+                <Loading isActive={this.state.loading} className={style.loading}/>
+            </div>
         );
     }
 }

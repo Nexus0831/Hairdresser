@@ -1,7 +1,6 @@
 import React from "react";
 import { render } from "react-dom";
 import { Router, Route, hashHistory } from "react-router";
-import injectTapEventPlugin from 'react-tap-event-plugin';
 import TopPage from "./components/TopPage.jsx";
 import MarkdownEditorUI from "./components/MarkdownEditorUI.jsx";
 import SubjectList from "./components/SubjectList.jsx";
@@ -10,11 +9,7 @@ import Login from "./components/Login.jsx";
 import Test from "./components/Test.jsx";
 import firebase from "firebase/firebase-browser";
 
-injectTapEventPlugin();
-const {getMuiTheme, MuiThemeProvider} = require('material-ui/styles');
-
 const App = () => (
-    <MuiThemeProvider muiTheme={getMuiTheme()}>
         <Router history={hashHistory}>
             <Route path="/">
                 <Route path="test" components={Test}/>
@@ -25,7 +20,6 @@ const App = () => (
                 <Route path="markdownEdit" component={MarkdownEditorUI} />
             </Route>
         </Router>
-    </MuiThemeProvider>
 );
 
 var config = {

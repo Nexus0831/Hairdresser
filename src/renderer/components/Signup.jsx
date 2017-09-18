@@ -6,7 +6,7 @@ import Errors from "./Errors.jsx";
 import firebase from "firebase/firebase-browser";
 import style from "./Signup.css";
 import TextField from 'material-ui/TextField';
-import RaisedButton from 'material-ui/RaisedButton';
+import Button from 'material-ui/Button';
 
 const BUTTON_STYLE = {
     marginRight: 20,
@@ -114,9 +114,9 @@ export default class Signup extends React.Component {
                      </div>
 
                      <div className="form-group">
-                         <RaisedButton label="アカウントを作成" primary={true} style={BUTTON_STYLE} />
+                         <Button raised label="アカウントを作成" primary={true} style={BUTTON_STYLE} />
                          <Link to="/login">
-                            <RaisedButton label="キャンセル" />
+                            <Button raised label="キャンセル" />
                          </Link>
                      </div>
                  </form>
