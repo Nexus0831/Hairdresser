@@ -20,8 +20,14 @@ export default class TopPage extends React.Component {
                     </Grid>
                 </Grid>
 
+                <Grid container spacing={0} style={{ height: '20%'}} >
+                    <Grid item xs={12} className={style.icon} justify="center">
+                        <h2>本日はどのようなご用件で？</h2>
+                    </Grid>
+                </Grid>
 
-                <Grid container className={style.header} spacing={0}>
+
+                <Grid container spacing={0}>
                     <Grid item xs={3}>
                     </Grid>
 

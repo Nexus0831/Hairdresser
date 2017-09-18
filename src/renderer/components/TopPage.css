@@ -5,7 +5,7 @@
 }
 
 .header {
-    height: 50%;
+    height: 40%;
 }
 
 .title {
@@ -26,5 +26,6 @@
 
 .icon {
     text-align: center;
+    color: white;
 }
 
