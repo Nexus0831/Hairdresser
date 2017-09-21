@@ -4,7 +4,7 @@ import { BrowserWindow, ipcMain, shell } from "electron";
 
 class MainWindow {
     constructor() {
-        this.window = new BrowserWindow({ titleBarStyle: 'hidden', width: 1200, height: 800 });
+        this.window = new BrowserWindow({ width: 1200, height: 800 });
         this.window.loadURL(`file://${__dirname}/../../index.html`);
         this.window.on("closed", () => {
             this.window = null;

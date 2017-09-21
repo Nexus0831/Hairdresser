@@ -2,9 +2,12 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Hairdresser</title>
-
-
+        <title>Hairdresser ver-0.6.0</title>
+        <link rel="stylesheet" href="static/github.css">
+        <!--
+        <script src="static/highlight.pack.js"></script>
+        <link rel="stylesheet" href="static/styles/monokai.css">
+        -->
         <style type="text/css">
             #app {
                 position: absolute;
@@ -21,15 +24,14 @@
             }
 
             a:hover {
-                color: #ddd;
+                color: #4ea248;
             }
-
         </style>
     </head>
 
     <body>
         <div class="window">
-            <div id="app" class="window-content" style="-webkit-app-region: drag"></div>
+            <div id="app" class="window-content"></div>
         </div>
 
         <script>require("./dist/renderer/app.js")</script>

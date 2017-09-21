@@ -17,12 +17,12 @@ const App = () => (
                 <Route path="signup" components={Signup}/>
                 <Route path="topPage" components={TopPage} />
                 <Route path="subjectList" components={SubjectList} />
-                <Route path="markdownEdit" component={MarkdownEditorUI} />
+                <Route path="markdown/:subjectId" component={MarkdownEditorUI} />
             </Route>
         </Router>
 );
 
-var config = {
+const config = {
     apiKey: "AIzaSyCLOHCPll1_hWa76AnEAyaHE8jhOZiLGQQ",
     authDomain: "hairdresser-a6cdd.firebaseapp.com",
     databaseURL: "https://hairdresser-a6cdd.firebaseio.com",
@@ -35,7 +35,7 @@ firebase.initializeApp(config);
 
 // Routingの初期化
 if (!location.hash.length) {
-    location.hash = "#/topPage";
+    location.hash = "#/login";
 }
 
 render(<App />, document.getElementById("app"));

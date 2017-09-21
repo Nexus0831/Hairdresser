@@ -1,25 +1,33 @@
 .markdownEditor {
-    display: flex;
-    flex-direction: row;
     height: 100%;
     width: 100%;
-    background-color: #fff;
+    background-image: linear-gradient(-180deg, #84316A, #732059);
+    position: fixed;
 }
 
-.markdownBorder {
-    width: 1px;
-    height: 104%;
-    margin-top: -20px;
-    margin-bottom: -20px;
-    border-left: solid #000 1px;
+.editor {
+    height: 100%;
+    width: 90%;
+    padding-left: 5px;
+    resize: none;
+    font-size: 20px;
+    background-color: rgba(255, 255, 255, 0);
+    border: none;
+}
+
+.editor:focus {
+    outline: none;
+}
+
+.previewer {
+    padding-left: 5px;
+    overflow: scroll;
 }
 
 .editorArea {
-    margin-right: 8px;
     font-size: 20px;
-    background-color: #fff;
 }
 
-.previewerArea {
-    padding-left: 8px;
+.submitButton {
+    background-color: #3d9137;
 }

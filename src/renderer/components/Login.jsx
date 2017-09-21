@@ -91,6 +91,7 @@ export default class Login extends React.Component {
                             label="メールアドレス"
                             value={this.state.email}
                             onChange={this.handleOnChangeEmail}
+                            style={{ width: '100%', marginBottom: '20px' }}
                         />
                     </div>
 
@@ -100,6 +101,7 @@ export default class Login extends React.Component {
                             type="password"
                             value={this.state.password}
                             onChange={this.handleOnChangePassword}
+                            style={{ width: '100%', marginBottom: '20px' }}
                         />
                     </div>
 
