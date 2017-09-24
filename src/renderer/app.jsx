@@ -4,20 +4,17 @@ import { Router, Route, hashHistory } from "react-router";
 import TopPage from "./components/TopPage.jsx";
 import MarkdownEditorUI from "./components/MarkdownEditorUI.jsx";
 import SubjectList from "./components/SubjectList.jsx";
-import Signup from "./components/Signup.jsx";
-import Login from "./components/Login.jsx";
-import Test from "./components/Test.jsx";
+import Preview from "./components/Preview.jsx"
 import firebase from "firebase/firebase-browser";
 
 const App = () => (
         <Router history={hashHistory}>
             <Route path="/">
-                <Route path="test" components={Test}/>
-                <Route path="login" components={Login}/>
-                <Route path="signup" components={Signup}/>
                 <Route path="topPage" components={TopPage} />
+                <Route path="preview" components={Preview} />
                 <Route path="subjectList" components={SubjectList} />
                 <Route path="markdown/:subjectId" component={MarkdownEditorUI} />
+                <Route path="markdown/:subjectId/:noteId" component={MarkdownEditorUI} />
             </Route>
         </Router>
 );
@@ -35,7 +32,7 @@ firebase.initializeApp(config);
 
 // Routingの初期化
 if (!location.hash.length) {
-    location.hash = "#/login";
+    location.hash = "#/topPage";
 }
 
 render(<App />, document.getElementById("app"));

@@ -6,9 +6,9 @@
 /******/ 	function __webpack_require__(moduleId) {
 /******/
 /******/ 		// Check if module is in cache
-/******/ 		if(installedModules[moduleId])
+/******/ 		if(installedModules[moduleId]) {
 /******/ 			return installedModules[moduleId].exports;
-/******/
+/******/ 		}
 /******/ 		// Create a new module (and put it into the cache)
 /******/ 		var module = installedModules[moduleId] = {
 /******/ 			i: moduleId,
@@ -63,23 +63,23 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 846);
+/******/ 	return __webpack_require__(__webpack_require__.s = 501);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ 42:
+/***/ 37:
 /***/ (function(module, exports) {
 
 module.exports = require("electron");
 
 /***/ }),
 
-/***/ 485:
+/***/ 489:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_fs__ = __webpack_require__(845);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_fs__ = __webpack_require__(846);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_fs___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_fs__);
 
 
@@ -120,15 +120,15 @@ function createFileManager() {
     return new FileManager();
 }
 
-/* harmony default export */ __webpack_exports__["a"] = createFileManager;
+/* harmony default export */ __webpack_exports__["a"] = (createFileManager);
 
 /***/ }),
 
-/***/ 486:
+/***/ 490:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_electron__ = __webpack_require__(42);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_electron__ = __webpack_require__(37);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_electron___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_electron__);
 
 
@@ -164,17 +164,17 @@ function createMainWindow() {
     return new MainWindow();
 }
 
-/* harmony default export */ __webpack_exports__["a"] = createMainWindow;
+/* harmony default export */ __webpack_exports__["a"] = (createMainWindow);
 
 /***/ }),
 
-/***/ 487:
+/***/ 491:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_electron__ = __webpack_require__(42);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_electron__ = __webpack_require__(37);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_electron___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_electron__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_events__ = __webpack_require__(844);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_events__ = __webpack_require__(845);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_events___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_events__);
 
 
@@ -219,15 +219,15 @@ function createPDFWindow(contents, fileManager) {
     return new PDFWindow(contents, fileManager);
 }
 
-/* harmony default export */ __webpack_exports__["a"] = createPDFWindow;
+/* harmony default export */ __webpack_exports__["a"] = (createPDFWindow);
 
 /***/ }),
 
-/***/ 488:
+/***/ 492:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_electron__ = __webpack_require__(42);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_electron__ = __webpack_require__(37);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_electron___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_electron__);
 
 
@@ -257,15 +257,15 @@ function setAppMenu(options) {
     __WEBPACK_IMPORTED_MODULE_0_electron__["Menu"].setApplicationMenu(__WEBPACK_IMPORTED_MODULE_0_electron__["Menu"].buildFromTemplate(template));
 }
 
-/* harmony default export */ __webpack_exports__["a"] = setAppMenu;
+/* harmony default export */ __webpack_exports__["a"] = (setAppMenu);
 
 /***/ }),
 
-/***/ 489:
+/***/ 493:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_electron__ = __webpack_require__(42);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_electron__ = __webpack_require__(37);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_electron___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_electron__);
 
 
@@ -284,15 +284,15 @@ function showExportPDFDialog() {
     });
 }
 
-/* harmony default export */ __webpack_exports__["a"] = showExportPDFDialog;
+/* harmony default export */ __webpack_exports__["a"] = (showExportPDFDialog);
 
 /***/ }),
 
-/***/ 490:
+/***/ 494:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_electron__ = __webpack_require__(42);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_electron__ = __webpack_require__(37);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_electron___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_electron__);
 
 
@@ -312,15 +312,15 @@ function showOpenFileDialog() {
     });
 }
 
-/* harmony default export */ __webpack_exports__["a"] = showOpenFileDialog;
+/* harmony default export */ __webpack_exports__["a"] = (showOpenFileDialog);
 
 /***/ }),
 
-/***/ 491:
+/***/ 495:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_electron__ = __webpack_require__(42);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_electron__ = __webpack_require__(37);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_electron___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_electron__);
 
 
@@ -338,38 +338,24 @@ function showSaveAsNewFileDialog() {
     });
 }
 
-/* harmony default export */ __webpack_exports__["a"] = showSaveAsNewFileDialog;
+/* harmony default export */ __webpack_exports__["a"] = (showSaveAsNewFileDialog);
 
 /***/ }),
 
-/***/ 844:
-/***/ (function(module, exports) {
-
-module.exports = require("events");
-
-/***/ }),
-
-/***/ 845:
-/***/ (function(module, exports) {
-
-module.exports = require("fs");
-
-/***/ }),
-
-/***/ 846:
+/***/ 501:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_electron__ = __webpack_require__(42);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_electron__ = __webpack_require__(37);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_electron___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_electron__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__createMainWindow__ = __webpack_require__(486);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__setAppMenu__ = __webpack_require__(488);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__showSaveAsNewFileDialog__ = __webpack_require__(491);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__createFileManager__ = __webpack_require__(485);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__showOpenFileDialog__ = __webpack_require__(490);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__createPDFWindow__ = __webpack_require__(487);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__showExportPDFDialog__ = __webpack_require__(489);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__createMainWindow__ = __webpack_require__(490);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__setAppMenu__ = __webpack_require__(492);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__showSaveAsNewFileDialog__ = __webpack_require__(495);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__createFileManager__ = __webpack_require__(489);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__showOpenFileDialog__ = __webpack_require__(494);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__createPDFWindow__ = __webpack_require__(491);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__showExportPDFDialog__ = __webpack_require__(493);
 
 
 
@@ -412,7 +398,7 @@ function saveFile() {
 }
 
 function saveAsNewFile() {
-    Promise.all([__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__showSaveAsNewFileDialog__["a" /* default */])(), mainWindow.requestText()]).then(([filePath, text]) => fileManager.saveAsNewFile(filePath, text)).catch(error => {
+    Promise.all([__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__showSaveAsNewFileDialog__["a" /* default */])(), mainWindow.requestText()]).then(([filePath, text]) => fileManager.saveFile(filePath, text)).catch(error => {
         console.log(error);
     });
 }
@@ -436,6 +422,20 @@ __WEBPACK_IMPORTED_MODULE_0_electron__["app"].on("ready", () => {
     fileManager = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_4__createFileManager__["a" /* default */])();
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__setAppMenu__["a" /* default */])({ openFile, saveFile, saveAsNewFile, exportPDF });
 });
+
+/***/ }),
+
+/***/ 845:
+/***/ (function(module, exports) {
+
+module.exports = require("events");
+
+/***/ }),
+
+/***/ 846:
+/***/ (function(module, exports) {
+
+module.exports = require("fs");
 
 /***/ })
 

@@ -1,6 +1,10 @@
 import React from "react";
-import Previewer from "./Previewer.jsx";
 import { ipcRenderer } from "electron";
+import marked from "marked";
+marked.setOptions({
+    sanitize: true,
+    langPrefix: '',
+});
 
 export default class PDFUI extends React.Component {
     constructor(props) {
@@ -33,7 +37,7 @@ export default class PDFUI extends React.Component {
 
     render() {
         return(
-            <Previewer value={this.state.text} />
+            <span dangerouslySetInnerHTML={{__html: marked(this.state.text)}}/>
         );
     }
 }

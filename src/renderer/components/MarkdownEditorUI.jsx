@@ -17,7 +17,6 @@ import marked from "marked";
 marked.setOptions({
     sanitize: true,
     langPrefix: '',
-
 });
 import firebase from "firebase/firebase-browser";
 
@@ -39,9 +38,10 @@ export default class MarkDownEditorUI extends React.Component {
         this.setState({text: text});
     };
 
-    onChangeTitle = e => {
-        this.setState({title: e.target.value});
+    onChangeTitle = event => {
+        this.setState({title: event.target.value});
     };
+
 
     componentDidMount() {
         ipcRenderer.on("REQUEST_TEXT", () => {
@@ -52,39 +52,54 @@ export default class MarkDownEditorUI extends React.Component {
             this.setState({text});
         });
 
-        const {subjectId} = this.props.params;
-        this.fbSubjectRef = this.db.ref("/subjects/" + subjectId);
+        const {subjectId, noteId} = this.props.params;
+
+        if (noteId !== undefined) {
+            this.fbSubjectRef = this.db.ref(`/subjects/${subjectId}/Notes/${noteId}`);
+            return this.fbSubjectRef.once("value").then(snapshot => {
+                this.setState({title: snapshot.val().title});
+                this.setState({text: snapshot.val().text});
+            })
+        } else {
+            this.fbSubjectRef = this.db.ref(`/subjects/${subjectId}`);
+        }
+
     }
 
     handleOnSubmit = event => {
         const {title, text} = this.state;
+        const {noteId} = this.props.params;
         event.preventDefault();
 
         if (!title.length || !text.length) {
             return;
         }
 
-        const newNoteRef = this.fbSubjectRef.child("Notes").push();
-        const newNote = {
-            title: title,
-            writeDay: Date.now(),
-            text: text
-        };
+        if (noteId === undefined) {
+            const newNoteRef = this.fbSubjectRef.child("Notes").push();
+            const newNote = {
+                title: title,
+                writeDay: Date.now(),
+                text: text,
+                key: newNoteRef.key
+            };
 
-        newNoteRef.update(newNote).then(() => {
-            hashHistory.push(`/subjectList`);
-        });
+            newNoteRef.update(newNote).then(() => {
+                hashHistory.push(`/subjectList`);
+            });
+        } else {
+            this.fbSubjectRef.set({
+                title: title,
+                writeDay: Date.now(),
+                text: text,
+                key: noteId
+            }).then(() => {
+                hashHistory.push(`/subjectList`);
+            });
+
+        }
+
     };
-
-    /*
-     componentDidUpdate() {
-     marked.setOptions({
-     highlight: function(code, lang) {
-     return hljs.highlightAuto(code, [lang]).value;
-     }
-     })
-     }
-     */
 
     componentWillUnmount() {
         ipcRenderer.removeAllListeners();
@@ -99,6 +114,7 @@ export default class MarkDownEditorUI extends React.Component {
                             label="タイトル"
                             style={{marginBottom: '10px', width: '70%'}}
                             onChange={this.onChangeTitle}
+                            value={this.state.title}
                         />
 
                         <Button
@@ -118,7 +134,7 @@ export default class MarkDownEditorUI extends React.Component {
                 </AppBar>
 
                 <Grid container spacing={0}
-                      style={{/*marginTop: '30px',*/ height: '100%', width: '100%', backgroundColor: 'white'}}>
+                      style={{height: '100%', width: '100%', backgroundColor: 'white'}}>
                     <Grid item xs={6} md={6} style={{borderRight: 'solid #000 1px', height: '100%'}}>
                         <AceEditor
                             mode="markdown"

@@ -45,7 +45,7 @@ function saveFile() {
 
 function saveAsNewFile() {
     Promise.all([ showSaveAsNewFileDialog(), mainWindow.requestText() ])
-        .then(([filePath, text]) => fileManager.saveAsNewFile(filePath, text))
+        .then(([filePath, text]) => fileManager.saveFile(filePath, text))
         .catch((error) => {
             console.log(error);
     });
