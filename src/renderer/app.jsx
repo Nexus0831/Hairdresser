@@ -20,12 +20,7 @@ const App = () => (
 );
 
 const config = {
-    apiKey: "AIzaSyCLOHCPll1_hWa76AnEAyaHE8jhOZiLGQQ",
-    authDomain: "hairdresser-a6cdd.firebaseapp.com",
-    databaseURL: "https://hairdresser-a6cdd.firebaseio.com",
-    projectId: "hairdresser-a6cdd",
-    storageBucket: "hairdresser-a6cdd.appspot.com",
-    messagingSenderId: "913604042966"
+        
 };
 
 firebase.initializeApp(config);
