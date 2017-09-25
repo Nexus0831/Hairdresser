@@ -15,8 +15,7 @@ import TextField from "material-ui/TextField";
 import Button from "material-ui/Button";
 import marked from "marked";
 marked.setOptions({
-    sanitize: true,
-    langPrefix: '',
+    gfm: true,
 });
 import firebase from "firebase/firebase-browser";
 
